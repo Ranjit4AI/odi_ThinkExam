@@ -1,0 +1,653 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1680.6666666666667,3940.6666666666665" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd2="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.Vision.OCR</x:String>
+      <x:String>UiPath.OCR.Contracts</x:String>
+      <x:String>UiPath.OCR.Contracts.Activities</x:String>
+      <x:String>UiPath.Core.Activities.OCR.Engines</x:String>
+      <x:String>System.Security</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="98">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Core</AssemblyReference>
+      <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldCollapseAll">False</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Sequence sap:VirtualizedContainerService.HintSize="1690.6666666666667,3876" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1628.6666666666667,3765.3333333333335" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch.Try>
+        <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1590,3526" sap2010:WorkflowViewState.IdRef="Sequence_1">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="sd:DataTable" Name="dtExcel" />
+            <Variable x:TypeArguments="x:Int32" Name="counter">
+              <Variable.Default>
+                <Literal x:TypeArguments="x:Int32" Value="2" />
+              </Variable.Default>
+            </Variable>
+          </Sequence.Variables>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dtExcel]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="1528,88" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Sheet1" WorkbookPath="KTM new TAG.xlsx" />
+          <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe Department'" sap:VirtualizedContainerService.HintSize="1528,252" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="a5f3e1491ec75713fdb27d796d57c221" Selector="&lt;html app='chrome.exe' title='Department of Steel and Mines' /&gt;">
+            <ui:BrowserScope.Body>
+              <ActivityAction x:TypeArguments="x:Object">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="400,104.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </ActivityAction>
+            </ui:BrowserScope.Body>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:BrowserScope>
+          <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtExcel]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="1528,2995.3333333333335" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+            <ui:ForEachRow.Body>
+              <ActivityAction x:TypeArguments="sd:DataRow">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1494,2875.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Into 'INPUT  txtVehicleNo'" EmptyField="True" sap:VirtualizedContainerService.HintSize="1432,54" sap2010:WorkflowViewState.IdRef="TypeInto_1" SimulateType="True" Text="[CurrentRow(0).ToString]">
+                    <ui:TypeInto.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="e303c562-eac4-4528-b35d-7c0cf2f113ed" InformativeScreenshot="042ea4e04ff524c5fade5921c4b28d81" Selector="&lt;html app='chrome.exe' title='Department of Steel and Mines' /&gt;&lt;webctrl tableRow='4' tag='TABLE' idx='2' /&gt;&lt;webctrl id='txtVehicleNo' tableRow='1' tag='INPUT' name='txtVehicleNo' type='text' /&gt;" WaitForReady="COMPLETE">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                      </ui:Target>
+                    </ui:TypeInto.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:TypeInto>
+                  <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'INPUT  btnsearch'" sap:VirtualizedContainerService.HintSize="1432,54" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
+                    <ui:Click.CursorPosition>
+                      <ui:CursorPosition Position="Center">
+                        <ui:CursorPosition.OffsetX>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetX>
+                        <ui:CursorPosition.OffsetY>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetY>
+                      </ui:CursorPosition>
+                    </ui:Click.CursorPosition>
+                    <ui:Click.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="06760534-aeb1-4f87-a7dc-71d76120292f" InformativeScreenshot="720c7d72182ba2d1d848bbb3fa38d650" Selector="&lt;html app='chrome.exe' title='Department of Steel and Mines' /&gt;&lt;webctrl idx='2' tableRow='4' tag='TABLE' /&gt;&lt;webctrl id='btnsearch' tableRow='1' tag='INPUT' aaname='Search' name='btnsearch' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:Click.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:Click>
+                  <uix:NCheckState DisplayName="Check App State 'Registration No.'" sap:VirtualizedContainerService.HintSize="1432,2451.3333333333335" sap2010:WorkflowViewState.IdRef="NCheckState_1" Timeout="2" Version="V3">
+                    <uix:NCheckState.IfExists>
+                      <Sequence DisplayName="Form Entry" sap:VirtualizedContainerService.HintSize="916,2230" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                        <Sequence.Variables>
+                          <Variable x:TypeArguments="x:String" Name="captcha" />
+                          <Variable x:TypeArguments="x:String" Name="captchaResult" />
+                          <Variable x:TypeArguments="x:String" Name="digits" />
+                          <Variable x:TypeArguments="x:Boolean" Name="flag" />
+                        </Sequence.Variables>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Department of Steel and Mines" sap:VirtualizedContainerService.HintSize="854,765.3333333333334" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="440eff5d-fa10-4770-9f48-b42a592baff7" Version="V2">
+                          <uix:NApplicationCard.Body>
+                            <ActivityAction x:TypeArguments="x:Object">
+                              <ActivityAction.Argument>
+                                <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                              </ActivityAction.Argument>
+                              <Sequence DisplayName="Radio-Checkbox Actions" sap:VirtualizedContainerService.HintSize="400,546" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <uix:NCheck Action="Check" DisplayName="Check Gps" sap:VirtualizedContainerService.HintSize="338,54" sap2010:WorkflowViewState.IdRef="NCheck_2" ScopeIdentifier="440eff5d-fa10-4770-9f48-b42a592baff7" Version="V3">
+                                  <uix:NCheck.Target>
+                                    <uix:TargetAnchorable BrowserURL="https://i3ms.odishaminerals.gov.in/i3ms/pms/TransporterAssignVehicleNew.aspx?ziK6GBCckRRwVk1xWq5U%2fxJw%2fUR2akrdjZtT49KyzlKoeGXRyJ4%2fszcq7qntYlPI" DesignTimeRectangle="673, 553, 20, 20" DesignTimeScaleFactor="1.5" ElementType="RadioButton" FriendlyName="'INPUT rdo_GPS_0'" FullSelectorArgument="&lt;webctrl id='rdo_GPS' tableRow='2' tag='TABLE' /&gt;&lt;webctrl id='rdo_GPS_0' tag='INPUT' aaname='Yes' /&gt;" FuzzySelectorArgument="&lt;webctrl id='rdo_GPS' tag='TABLE' /&gt;&lt;webctrl id='rdo_GPS_0' tag='INPUT' aaname='Yes' type='radio' class='' /&gt;" Guid="02ba8a84-a134-488c-b8dd-e9f08124329e" ImageBase64="" InformativeScreenshot="f476009f9b6ff496c0b669f207a1253e.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Department of Steel and Mines' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V1" Visibility="Interactive">
+                                      <uix:TargetAnchorable.Anchors>
+                                        <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                          <uix:Target DesignTimeRectangle="692, 552, 34, 25" ElementType="Text" FriendlyName="'checked'" FullSelectorArgument="&lt;webctrl id='rdo_GPS' tableRow='2' tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl id='rdo_GPS' tag='TABLE' /&gt;&lt;webctrl type='' tag='LABEL' class='' aaname='Yes' check:innerText='Yes' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACYAAAAdCAYAAADGgB7AAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAKxSURBVFhH7VUxa9tAFNbQ/3CjaZZABnuKx5oOFmSoIRBDC8WTUYYiPATjwWgqIoM9BdOhoEw2NKBO8igPxR4K9hCQIYMGDxoCGjJoyFT69U6yHN1JdTF2aQoevkHvnt5979P3nqQgCPAcsSe2KfbENsWe2Kb4D4jdW1CJBEmqwLjjk5JwrmSaI6HQsuFnnO8K0pfZ4+rBva5El7Z/c+nChMLIEwXmIuN8h5De9X88BXwbWp6pJqN3yycyjC+LIXH5ykmd7RrSy8ufXMC7UUDo5eTC4lVb9FGjcSmvwfYT8b8E6UULQtBBryyq5sNuF2iMQLnxErlLeFP02zUUD9h7tKkjGUrHgvsg5FG4wy6Uk8OweVbv8ERBd+im8jKIBfBHGgrsgsZStTsDFVao3IMj5AZzqiQjRA5RbejQP+pQz6KLyVuDyx93SlH8VQ1Nmqe3FMhhMwTVa94eqU8ZwYNZJ/SFIvRJrFYB2sgX8lwYp7RwXk0Ng/M5GqTaYKmwT6eeNfe6i2kiL7i30WS+Jk1YCYvw5k/itgc57K6EIit4asAVcyZ6qGwpaxhiIrHqHp3oLGIU3ncL1nAMN0ksuS54+LAaTDVaLFQunROvl7VYNcSUj6aaHFWhdgyYEwd+hg8Z1m9+qlqJFX/DeyVGTEyuR97KxCcb3uodD87XpPkZcpAbBqYeX3s9sdj0WZ+RIiaWOal/gu/BnVkwLuSI5LGOceJ8K2IBnd6w6Pt+QpVseKNeqKA5E8+YZZhyBNq3p/h2xIIx9GNWtABlIAzAgwPjg4r+fPm8HBRxhTBi5jmrUeL+NlsSo5gbqIY/f7osz9TIV/F+IqXEihHMH3qwCaWcC2O5c5NTfXtiDMLmlw6KqNS7sFwx1xfMT5uhy1YbTFNWWE/sH2JPbFPsiW2KZ0oswC/Q8QsKqJvq/AAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
+                                        </scg:List>
+                                      </uix:TargetAnchorable.Anchors>
+                                    </uix:TargetAnchorable>
+                                  </uix:NCheck.Target>
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </uix:NCheck>
+                                <uix:NCheck Action="Check" DisplayName="Check VTS" sap:VirtualizedContainerService.HintSize="338,54" sap2010:WorkflowViewState.IdRef="NCheck_3" ScopeIdentifier="440eff5d-fa10-4770-9f48-b42a592baff7" Version="V3">
+                                  <uix:NCheck.Target>
+                                    <uix:TargetAnchorable BrowserURL="https://i3ms.odishaminerals.gov.in/i3ms/pms/TransporterAssignVehicleNew.aspx?ziK6GBCckRRwVk1xWq5U%2fxJw%2fUR2akrdjZtT49KyzlKoeGXRyJ4%2fszcq7qntYlPI" DesignTimeRectangle="676, 605, 20, 20" DesignTimeScaleFactor="1.5" ElementType="RadioButton" FriendlyName="'INPUT Rdo_VTS_0'" FullSelectorArgument="&lt;webctrl id='Rdo_VTS' tableRow='1' tag='TABLE' /&gt;&lt;webctrl id='Rdo_VTS_0' tag='INPUT' aaname='Yes' /&gt;" FuzzySelectorArgument="&lt;webctrl id='Rdo_VTS' tag='TABLE' /&gt;&lt;webctrl id='Rdo_VTS_0' tag='INPUT' aaname='Yes' type='radio' class='' /&gt;" Guid="05cc6775-1682-4921-85da-09747fc50f73" ImageBase64="" InformativeScreenshot="a8de85a1c75f80d1571a883112a9e83d.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Department of Steel and Mines' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V1" Visibility="Interactive">
+                                      <uix:TargetAnchorable.Anchors>
+                                        <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                          <uix:Target DesignTimeRectangle="695, 604, 34, 25" ElementType="Text" FriendlyName="'checked'" FullSelectorArgument="&lt;webctrl id='Rdo_VTS' tableRow='1' tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl id='Rdo_VTS' tag='TABLE' /&gt;&lt;webctrl type='' tag='LABEL' class='' aaname='Yes' check:innerText='Yes' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACYAAAAdCAYAAADGgB7AAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAANPSURBVFhH7VYxaNtAFNWQPUMGDYaYdmggQz0l0KUiQwUZaghE4EIQGUIyBNGhiA7BZCgmg02GYjwEZAh4aEGe3CXgDkEeDPIQUCCDhgyCGjRk8NCp9PXLOksn2UnrNKEdPLxBd0/67/77/5+EwWCA/xEzYdNiJmxazIRNCybMh3thw+4GcOD2x4kj+FcO49lwPH8i5yEQCbPKeQiCMES+bMFPEYdwW9BfhBwho8K4eERhn3rfwwc+6LIG8ypN9mHXFMz/TvwDQXjT+MEefDh1FSILLB224d1wZF74io6Wy+09AoQnRz/jBc9C5TULvshbxVstQq07qWxRjZ6bMMpFaHsaSh8baF943D6Haxut0yoqhxr0wwqM0xbs63GeMPceiQW3qSOXztqVCW2ZCV4vwfJi/sCzYezlmGgeWajHfNbJkWYR8kKaR1iQUWwmDzsmbOA7MLbE8IWMAqPrctnKQWu6CW5jbykKkF1ToBYUSBkWkPg64/s9A4oYr8sFFcqGFNWsIFKsXtxMSSsZvPMSZPaC+IoCsVOKWwYcn+N90bHKePJRnB3/0oS+Eq7PFwzYPmXrRAkFCBJKX2Ob3aYWOaTU7ChrXPFzuHFhvkvbIyc+OLjx0Bpxxro4qEk53FvcReNyMGysMDtkcc2COzoglUKrbqBaM2B2YjficZHCMPWRJQJyb834YwH6Nqqb8f7tkFHp+jSYqU6f8+tZyNs6KvWg+Mfn4e1XUpCRg1X2EUr/earLqINLa3yg20DvdsLAXs9EqRDXZIxVaHUrMZ7uuCs5O4Q8qnTqxH6fRss6+/AzBcXjKtkxAScNWKmZ511aZF8F+raMLCeueBYf/v7CgjrcZ6d/GtTRuB2+54XF3KfuPdiFuqVCKycHt9epID8XihuOJ7Z+f2EEvqNy+9R90XxjMyuTRf5DC843F42dLDsEDe5unBm/W4XCuv7BhAWZMHb4mlmi+aRAecnmIEEsVGHT34p3VoQU8URIGyrUTYmzMtn1fycsQDD590dNkkRuuworum4oi591SMy2BOZl6Kf2nxY/WdWh+48K2KibXIBJ8Knj2jCH8ygs+BbdGBP/PjwH7aYx/G4wu4ymRf9147w7hf1LzIRNi5mw6TDAL8C4OqPtLxwhAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image" />
+                                        </scg:List>
+                                      </uix:TargetAnchorable.Anchors>
+                                    </uix:TargetAnchorable>
+                                  </uix:NCheck.Target>
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </uix:NCheck>
+                                <uix:NCheck Action="Check" DisplayName="Check SIM" sap:VirtualizedContainerService.HintSize="338,54" sap2010:WorkflowViewState.IdRef="NCheck_4" ScopeIdentifier="440eff5d-fa10-4770-9f48-b42a592baff7" Version="V3">
+                                  <uix:NCheck.Target>
+                                    <uix:TargetAnchorable BrowserURL="https://i3ms.odishaminerals.gov.in/i3ms/pms/TransporterAssignVehicleNew.aspx?ziK6GBCckRRwVk1xWq5U%2fxJw%2fUR2akrdjZtT49KyzlKoeGXRyJ4%2fszcq7qntYlPI" DesignTimeRectangle="673, 657, 20, 20" DesignTimeScaleFactor="1.5" ElementType="RadioButton" FriendlyName="'INPUT Rdo_SIM_0'" FullSelectorArgument="&lt;webctrl id='Rdo_SIM' tableRow='8' tag='TABLE' /&gt;&lt;webctrl id='Rdo_SIM_0' tag='INPUT' aaname='Yes' /&gt;" FuzzySelectorArgument="&lt;webctrl id='Rdo_SIM' tag='TABLE' /&gt;&lt;webctrl id='Rdo_SIM_0' tag='INPUT' aaname='Yes' type='radio' class='' /&gt;" Guid="c5798af0-90da-47a0-98c5-1c61361e3b50" ImageBase64="" InformativeScreenshot="89e6dc7905375bba6d7bbcedd4e83e99.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Department of Steel and Mines' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V1" Visibility="Interactive">
+                                      <uix:TargetAnchorable.Anchors>
+                                        <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                          <uix:Target DesignTimeRectangle="692, 656, 34, 25" ElementType="Text" FriendlyName="'checked'" FullSelectorArgument="&lt;webctrl id='Rdo_SIM' tableRow='8' tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl id='Rdo_SIM' tag='TABLE' /&gt;&lt;webctrl type='' tag='LABEL' class='' aaname='Yes' check:innerText='Yes' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACYAAAAdCAYAAADGgB7AAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAKxSURBVFhH7VUxa9tAFNbQ/3CjaZZABnuKx5oOFmSoIRBDC8WTUYYiPATjwWgqIoM9BdOhoEw2NKBO8igPxR4K9hCQIYMGDxoCGjJoyFT69U6yHN1JdTF2aQoevkHvnt5979P3nqQgCPAcsSe2KfbENsWe2Kb4D4jdW1CJBEmqwLjjk5JwrmSaI6HQsuFnnO8K0pfZ4+rBva5El7Z/c+nChMLIEwXmIuN8h5De9X88BXwbWp6pJqN3yycyjC+LIXH5ykmd7RrSy8ufXMC7UUDo5eTC4lVb9FGjcSmvwfYT8b8E6UULQtBBryyq5sNuF2iMQLnxErlLeFP02zUUD9h7tKkjGUrHgvsg5FG4wy6Uk8OweVbv8ERBd+im8jKIBfBHGgrsgsZStTsDFVao3IMj5AZzqiQjRA5RbejQP+pQz6KLyVuDyx93SlH8VQ1Nmqe3FMhhMwTVa94eqU8ZwYNZJ/SFIvRJrFYB2sgX8lwYp7RwXk0Ng/M5GqTaYKmwT6eeNfe6i2kiL7i30WS+Jk1YCYvw5k/itgc57K6EIit4asAVcyZ6qGwpaxhiIrHqHp3oLGIU3ncL1nAMN0ksuS54+LAaTDVaLFQunROvl7VYNcSUj6aaHFWhdgyYEwd+hg8Z1m9+qlqJFX/DeyVGTEyuR97KxCcb3uodD87XpPkZcpAbBqYeX3s9sdj0WZ+RIiaWOal/gu/BnVkwLuSI5LGOceJ8K2IBnd6w6Pt+QpVseKNeqKA5E8+YZZhyBNq3p/h2xIIx9GNWtABlIAzAgwPjg4r+fPm8HBRxhTBi5jmrUeL+NlsSo5gbqIY/f7osz9TIV/F+IqXEihHMH3qwCaWcC2O5c5NTfXtiDMLmlw6KqNS7sFwx1xfMT5uhy1YbTFNWWE/sH2JPbFPsiW2KZ0oswC/Q8QsKqJvq/AAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
+                                        </scg:List>
+                                      </uix:TargetAnchorable.Anchors>
+                                    </uix:TargetAnchorable>
+                                  </uix:NCheck.Target>
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </uix:NCheck>
+                                <uix:NCheck Action="Check" DisplayName="Check/Uncheck 'Checkbox'" sap:VirtualizedContainerService.HintSize="338,54" sap2010:WorkflowViewState.IdRef="NCheck_1" ScopeIdentifier="440eff5d-fa10-4770-9f48-b42a592baff7" Version="V3">
+                                  <uix:NCheck.Target>
+                                    <uix:TargetAnchorable BrowserURL="https://i3ms.odishaminerals.gov.in/i3ms/pms/TransporterAssignVehicleNew.aspx?ziK6GBCckRRwVk1xWq5U%2fxJw%2fUR2akrdjZtT49KyzlKoeGXRyJ4%2fszcq7qntYlPI" DesignTimeRectangle="362, 837, 20, 20" DesignTimeScaleFactor="1.5" ElementType="CheckBox" FriendlyName="'Checkbox'" FullSelectorArgument="&lt;webctrl id='tblGPS' tableRow='2' tag='TABLE' /&gt;&lt;webctrl id='chkClick' tableRow='13' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='tblGPS' tag='TABLE' /&gt;&lt;webctrl id='chkClick' type='checkbox' tag='INPUT' class='' aaname='' /&gt;" Guid="333abc81-f7a7-4df1-a321-2e95d904fdb1" ImageBase64="" InformativeScreenshot="39bdb865f4bec745f353ebe8c036a83f.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Department of Steel and Mines' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V1" Visibility="Interactive" />
+                                  </uix:NCheck.Target>
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </uix:NCheck>
+                                <uix:NMouseScroll KeyModifiers="{x:Null}" Direction="Down" DisplayName="Mouse Scroll 'IMG imgCaptch'" sap:VirtualizedContainerService.HintSize="338,54" sap2010:WorkflowViewState.IdRef="NMouseScroll_1" InteractionMode="HardwareEvents" MovementUnits="10" ScopeIdentifier="440eff5d-fa10-4770-9f48-b42a592baff7" Version="V3">
+                                  <uix:NMouseScroll.SearchedElement>
+                                    <uix:SearchedElement>
+                                      <uix:SearchedElement.Target>
+                                        <uix:TargetAnchorable BrowserURL="https://i3ms.odishaminerals.gov.in/i3ms/pms/TransporterAssignVehicleNew.aspx?ziK6GBCckRQuErQSNNK6ug5ufvRh5RwgYNhQk7CIlFzUN1bMSVf+A5E0sv9b0iXX" DesignTimeRectangle="359, 938, 480, 45" DesignTimeScaleFactor="1.5" ElementType="Icon" FriendlyName="'IMG imgCaptch'" FullSelectorArgument="&lt;webctrl idx='2' tableRow='4' tag='TABLE' /&gt;&lt;webctrl id='imgCaptch' tableRow='2' tag='IMG' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl id='imgCaptch' type='' tag='IMG' class='' aaname='captcha' /&gt;" Guid="6b693124-fb3a-4c61-92c7-629faff10412" ImageBase64="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" InformativeScreenshot="2210cdfbb19667a58b736ea3a61881fa.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Department of Steel and Mines' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V1" Visibility="Interactive" />
+                                      </uix:SearchedElement.Target>
+                                      <uix:SearchedElement.Timeout>
+                                        <InArgument x:TypeArguments="x:Double" />
+                                      </uix:SearchedElement.Timeout>
+                                    </uix:SearchedElement>
+                                  </uix:NMouseScroll.SearchedElement>
+                                  <uix:NMouseScroll.Target>
+                                    <uix:TargetAnchorable BrowserURL="https://i3ms.odishaminerals.gov.in/i3ms/pms/TransporterAssignVehicleNew.aspx?ziK6GBCckRRwVk1xWq5U%2fxJw%2fUR2akrdjZtT49KyzlKoeGXRyJ4%2fszcq7qntYlPI" DesignTimeRectangle="359, 938, 480, 45" DesignTimeScaleFactor="1.5" ElementType="Icon" FriendlyName="'IMG imgCaptch'" FullSelectorArgument="&lt;webctrl idx='2' tableRow='4' tag='TABLE' /&gt;&lt;webctrl id='imgCaptch' tableRow='2' tag='IMG' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl id='imgCaptch' type='' tag='IMG' class='' aaname='captcha' /&gt;" Guid="a9b7de7f-b3b9-4c48-88d2-3c17a8729e7d" ImageBase64="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" InformativeScreenshot="979d511f1a21b8ea69bc1a99066b6e0a.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Department of Steel and Mines' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V1" Visibility="Interactive" />
+                                  </uix:NMouseScroll.Target>
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </uix:NMouseScroll>
+                              </Sequence>
+                            </ActivityAction>
+                          </uix:NApplicationCard.Body>
+                          <uix:NApplicationCard.TargetApp>
+                            <uix:TargetApp Area="0, 0, 0, 0" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="15bb6c4ea39dcc2a806c4d4db9c68fa5.jpg" Selector="&lt;html app='chrome.exe' title='Department of Steel and Mines' /&gt;" Url="https://i3ms.odishaminerals.gov.in/i3ms/pms/TransporterAssignVehicleNew.aspx?ziK6GBCckRQuErQSNNK6ug5ufvRh5RwgYNhQk7CIlFzUN1bMSVf+A5E0sv9b0iXX" />
+                          </uix:NApplicationCard.TargetApp>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </uix:NApplicationCard>
+                        <ui:GetOCRText WordsInfo="{x:Null}" DisplayName="Get OCR Text 'IMG  imgCaptch'" sap:VirtualizedContainerService.HintSize="854,54" sap2010:WorkflowViewState.IdRef="GetOCRText_1">
+                          <ui:GetOCRText.OCREngine>
+                            <ActivityFunc x:TypeArguments="sd1:Image, scg:IEnumerable(scg:KeyValuePair(sd2:Rectangle, x:String))">
+                              <ActivityFunc.Argument>
+                                <DelegateInArgument x:TypeArguments="sd1:Image" Name="Image" />
+                              </ActivityFunc.Argument>
+                              <ui:GoogleOCR AllowedCharacters="{x:Null}" DeniedCharacters="{x:Null}" FilterRegion="{x:Null}" Invert="{x:Null}" Language="{x:Null}" Output="{x:Null}" PredictionId="{x:Null}" Profile="{x:Null}" Scale="{x:Null}" Text="{x:Null}" ComputeSkewAngle="False" DisplayName="Tesseract OCR" ExtractWords="False" sap:VirtualizedContainerService.HintSize="200,25.333333333333332" sap2010:WorkflowViewState.IdRef="GoogleOCR_1" Image="[Image]" />
+                            </ActivityFunc>
+                          </ui:GetOCRText.OCREngine>
+                          <ui:GetOCRText.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6709212d-75eb-442f-8349-40252472a570" InformativeScreenshot="e0fb1918b8d6120121690330e801b8a5" Selector="&lt;html app='chrome.exe' title='Department of Steel and Mines' /&gt;&lt;webctrl id='imgCaptch' tag='IMG' aaname='captcha' /&gt;">
+                              <ui:Target.TimeoutMS>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:Target.TimeoutMS>
+                              <ui:Target.WaitForReady>
+                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                              </ui:Target.WaitForReady>
+                            </ui:Target>
+                          </ui:GetOCRText.Target>
+                          <ui:GetOCRText.Text>
+                            <OutArgument x:TypeArguments="x:String">[captcha]</OutArgument>
+                          </ui:GetOCRText.Text>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </ui:GetOCRText>
+                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="CaptchaSolving.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="854,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="CaptchaSolving.xaml">
+                          <ui:InvokeWorkflowFile.Arguments>
+                            <InArgument x:TypeArguments="x:String" x:Key="captcha">
+                              <VisualBasicValue x:TypeArguments="x:String" ExpressionText="captcha" />
+                            </InArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="captchaResult">
+                              <VisualBasicReference x:TypeArguments="x:String" ExpressionText="captchaResult" />
+                            </OutArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="digits">
+                              <VisualBasicValue x:TypeArguments="x:String" ExpressionText="digits" />
+                            </InArgument>
+                            <OutArgument x:TypeArguments="x:Boolean" x:Key="flag">
+                              <VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="flag" />
+                            </OutArgument>
+                          </ui:InvokeWorkflowFile.Arguments>
+                        </ui:InvokeWorkflowFile>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="854,54" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Entering Captcha result&quot;+captchaResult]">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </ui:LogMessage>
+                        <ui:TypeInto AlterIfDisabled="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" ClickBeforeTyping="True" DelayBefore="4000" DisplayName="Enter captcha result" EmptyField="True" sap:VirtualizedContainerService.HintSize="854,54" sap2010:WorkflowViewState.IdRef="TypeInto_2" SimulateType="False" Text="[captchaResult]">
+                          <ui:TypeInto.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="e303c562-eac4-4528-b35d-7c0cf2f113ed" InformativeScreenshot="0b9a3bf4d8a2e43be883168d36186e7f" Selector="&lt;html app='chrome.exe' title='Department of Steel and Mines' /&gt;&lt;webctrl tag='INPUT' class='inputbtn' name='txtcaptcha' /&gt;" WaitForReady="COMPLETE">
+                              <ui:Target.TimeoutMS>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:Target.TimeoutMS>
+                            </ui:Target>
+                          </ui:TypeInto.Target>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </ui:TypeInto>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="854,96" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Clicking submit button&quot;]">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </ui:LogMessage>
+                        <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Submit button" sap:VirtualizedContainerService.HintSize="854,54" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="False">
+                          <ui:Click.CursorPosition>
+                            <ui:CursorPosition Position="Center">
+                              <ui:CursorPosition.OffsetX>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:CursorPosition.OffsetX>
+                              <ui:CursorPosition.OffsetY>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:CursorPosition.OffsetY>
+                            </ui:CursorPosition>
+                          </ui:Click.CursorPosition>
+                          <ui:Click.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3f94f94b-097d-46d0-b04a-4c2b63fba88d" InformativeScreenshot="10f8a926d76e10bb827db1e2aac7b1f9" Selector="&lt;html app='chrome.exe' title='Department of Steel and Mines' /&gt;&lt;webctrl id='btnSubmit' tableRow='2' tag='INPUT' aaname='Submit' /&gt;">
+                              <ui:Target.TimeoutMS>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:Target.TimeoutMS>
+                              <ui:Target.WaitForReady>
+                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                              </ui:Target.WaitForReady>
+                            </ui:Target>
+                          </ui:Click.Target>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </ui:Click>
+                        <uix:NCheckState DisplayName="Check App State 'OK'" sap:VirtualizedContainerService.HintSize="854,641.3333333333334" sap2010:WorkflowViewState.IdRef="NCheckState_2" Timeout="4" Version="V3">
+                          <uix:NCheckState.IfExists>
+                            <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="400,420" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:Click AlterIfDisabled="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="4000" DisplayName="Click 'Ok' button" sap:VirtualizedContainerService.HintSize="338,54" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+                                <ui:Click.CursorPosition>
+                                  <ui:CursorPosition Position="Center">
+                                    <ui:CursorPosition.OffsetX>
+                                      <InArgument x:TypeArguments="x:Int32" />
+                                    </ui:CursorPosition.OffsetX>
+                                    <ui:CursorPosition.OffsetY>
+                                      <InArgument x:TypeArguments="x:Int32" />
+                                    </ui:CursorPosition.OffsetY>
+                                  </ui:CursorPosition>
+                                </ui:Click.CursorPosition>
+                                <ui:Click.Target>
+                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="df250bb5-e3ad-4078-9cc2-daac02d71aba" InformativeScreenshot="cd73519cd875b8c7eb9602572fc35c42" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Department of Steel and Mines - Google Chrome' /&gt;&lt;ctrl name='i3ms.odishaminerals.gov.in says' role='dialog' /&gt;&lt;ctrl name='OK' role='push button' /&gt;">
+                                    <ui:Target.TimeoutMS>
+                                      <InArgument x:TypeArguments="x:Int32" />
+                                    </ui:Target.TimeoutMS>
+                                    <ui:Target.WaitForReady>
+                                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                                    </ui:Target.WaitForReady>
+                                  </ui:Target>
+                                </ui:Click.Target>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </ui:Click>
+                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="338,54" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Data submitted successfully&quot;]">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </ui:LogMessage>
+                              <ui:WriteCell Cell="[&quot;B&quot;+counter.ToString]" DisplayName="Write Cell Workbook" sap:VirtualizedContainerService.HintSize="338,116" sap2010:WorkflowViewState.IdRef="WriteCell_3" SheetName="Sheet1" Text="Complete" WorkbookPath="KTM new TAG.xlsx">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </ui:WriteCell>
+                            </Sequence>
+                          </uix:NCheckState.IfExists>
+                          <uix:NCheckState.IfNotExists>
+                            <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="400,368" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="338,96" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Failed captcha&quot;]">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </ui:LogMessage>
+                              <ui:WriteCell Cell="[&quot;B&quot;+counter.ToString]" DisplayName="Write Cell Workbook" sap:VirtualizedContainerService.HintSize="338,116" sap2010:WorkflowViewState.IdRef="WriteCell_4" SheetName="Sheet1" Text="Failed Captcha" WorkbookPath="KTM new TAG.xlsx">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </ui:WriteCell>
+                            </Sequence>
+                          </uix:NCheckState.IfNotExists>
+                          <uix:NCheckState.Target>
+                            <uix:TargetAnchorable DesignTimeRectangle="1187, 234, 96, 49" DesignTimeScaleFactor="1.5" ElementType="Button" FriendlyName="'OK'" FullSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Department of Steel and Mines - Google Chrome' /&gt;&lt;ctrl name='i3ms.odishaminerals.gov.in says' role='dialog' /&gt;&lt;ctrl name='OK' role='push button' /&gt;" FuzzySelectorArgument="&lt;ctrl name='i3ms.odishaminerals.gov.in says' role='dialog' /&gt;&lt;ctrl name='OK' role='push button' automationid='' check:fulltext='OK' /&gt;" Guid="7faddbb3-f066-4e1d-95be-51cee6294adc" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGQAAAA1CAYAAAC3ME4GAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAObSURBVHhe7Zw/SxxBGIfzOZJYm49gGYj5COkskk8QwRQBCyuboCmMYHGQFBYiaS4hYBKNkMJGggkcplEIkoArnt4Zc3t3nu6b/e3eu/89JOy674R34CluZnY5fs/NzO7BzA3SIqpkClmpdWh86YTuz9bp5oSl5AxyRb7IOVliQpq2Q49eNTJvohQD8kbuXAIhqLwzeRB0vDWxT7ef7NOQUgjIFhkja+TOUgIh4cjwO8++/021X2fkOI6SM8gV+bIYZI78UTwhmMt4ZKADi1jdbtOLT6f0/IOSF8gTubKYUIrlefCEPF5qehUYQjCHzvdmDmNDTMkX5IuceaQge3jwhPDTFI+ON1/t1A2U/EHO0VECD54Qnq7QAGtzq6exC5ViQM7Imz/DQaYQzHXcSSkO5KxCBKFChKFChKFChKFChKFChKFChKFChKFChKFChGGokEN6utWhvdaF9918LqhR71D1dfof6andc7+P1YrVj1Q71Ohfu7N5FGsrC/OETJ/QejMuwu7GP+/VmjQSuSZTiHufjZZ/TWP3JNa/TAwTUqdlqx9+t0cbn4/DIKePqbLbIxttzjltVA+C69JCjsL7NNs0zvcQgFlC3nUyAw85oPkf/aDrNj3o1yeFjG31/M/dM1quJO9RLkYJCYL9+efyKWaxTRb6OD1aWfDrokLCdeMyqeVilJBlC0E67hpRz2z34bUBgft1gRB30f/SRZucRTyJkUJ2NrPbfQYICehRVdhUxZg5QrYGTTUDhFh2uJi3OjQ1nby2fIwSEizYg9aQBZv20MdxF+x+4NE1ZGihRTvetCXrcZcxSkj4lNWj9aWM9is+ZUl8IWTMEhJ9f3DfQ1aq9QHvIeF1SSEQF64rsp62DBPigjfsJoJk0m/qyV99WgiIypXzPmKeEOCOhvlal6zkf1lWmyqL6V97thCXSrie2G7bWLStJMwU8h+jQoShQoShQoShQoShQoShQoShQoShQoShQoShQoRxZSG6x/B6uHSP4eiMvwsXlboL9/p4+y3chQvgwRPC+9SxNZf3qd99pvvUi2R0Nr5PHdkH+9T5JAdsXkcjrKHzx+02za1ln0ig/Bs4yWHte/wkB4Dsg5McUB6+9M86gSl0wMUsRskX5Ip8WQYyR/4ogRCcRjPsnQbkd+DOSrEg6+FJK30aEAoqeaRgCKmY4kC2yBh5swyUmBAumMuwwPDTl5IvyBX5IudkyRSipaxC9BcphgWLxz1s0AAAAABJRU5ErkJggg==" InformativeScreenshot="7abb7a5e1a5a3f225161cb495eb33973.png" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Department of Steel and Mines - Google Chrome' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V1" Visibility="Interactive" />
+                          </uix:NCheckState.Target>
+                        </uix:NCheckState>
+                      </Sequence>
+                    </uix:NCheckState.IfExists>
+                    <uix:NCheckState.IfNotExists>
+                      <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="462,200.66666666666666" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Sequence DisplayName="Updating status in excel" sap:VirtualizedContainerService.HintSize="400,84.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                          <Sequence.Variables>
+                            <Variable x:TypeArguments="x:String" Name="outputText" />
+                          </Sequence.Variables>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:WriteCell Cell="[&quot;B&quot;+counter.ToString]" DisplayName="Write Cell Workbook" sap:VirtualizedContainerService.HintSize="338,116" sap2010:WorkflowViewState.IdRef="WriteCell_1" SheetName="Sheet1" Text="No Data available" WorkbookPath="KTM new TAG.xlsx">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:WriteCell>
+                          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="338,54" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                            <ui:CommentOut.Body>
+                              <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="400,366" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:GetValue ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Get text if vehicle is tagged already" DisplayName="Get Text" sap:VirtualizedContainerService.HintSize="338,99.33333333333333" sap2010:WorkflowViewState.IdRef="GetValue_1">
+                                  <ui:GetValue.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="569d13d4-9280-4a13-ad30-fd96bad5cba7" InformativeScreenshot="a448280445f9cdfee7b86ae16d725260" Selector="&lt;html app='chrome.exe' title='Department of Steel and Mines' /&gt;&lt;webctrl parentid='midArea' tag='TABLE' /&gt;&lt;webctrl tag='DIV' aaname='*' idx='1' /&gt;">
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                      <ui:Target.WaitForReady>
+                                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                                      </ui:Target.WaitForReady>
+                                    </ui:Target>
+                                  </ui:GetValue.Target>
+                                  <ui:GetValue.Value>
+                                    <OutArgument x:TypeArguments="x:String">[outputText]</OutArgument>
+                                  </ui:GetValue.Value>
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </ui:GetValue>
+                                <ui:WriteCell Cell="[&quot;C&quot;+counter.ToString]" DisplayName="Write Cell Workbook" sap:VirtualizedContainerService.HintSize="338,116" sap2010:WorkflowViewState.IdRef="WriteCell_2" SheetName="Sheet1" Text="[outputText]" WorkbookPath="KTM new TAG.xlsx">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </ui:WriteCell>
+                              </Sequence>
+                            </ui:CommentOut.Body>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:CommentOut>
+                        </Sequence>
+                      </Sequence>
+                    </uix:NCheckState.IfNotExists>
+                    <uix:NCheckState.Target>
+                      <uix:TargetAnchorable BrowserURL="https://i3ms.odishaminerals.gov.in/i3ms/pms/TransporterAssignVehicleNew.aspx?ziK6GBCckRRwVk1xWq5U%2fxJw%2fUR2akrdjZtT49KyzlKoeGXRyJ4%2fszcq7qntYlPI" DesignTimeRectangle="359, 450, 255, 45" DesignTimeScaleFactor="1.5" FriendlyName="'Registration No.'" FullSelectorArgument="&lt;webctrl tableRow='2' tag='TABLE' /&gt;&lt;webctrl tableRow='2' tag='TD' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='TD' class='grey paddingRow' aaname='                                                                                              ' check:innerText='Registration No.' /&gt;" Guid="981a1eef-ac16-40d3-bc8a-7aa1a773a9d9" ImageBase64="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" InformativeScreenshot="f0b08ec8babf273489f01fa01d52ce49.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Department of Steel and Mines' /&gt;" SearchSteps="FuzzySelector" Version="V1" Visibility="Interactive" />
+                    </uix:NCheckState.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NCheckState>
+                  <Assign sap:VirtualizedContainerService.HintSize="1432,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_1">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Int32">[counter]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Int32">[counter+1]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </ActivityAction>
+            </ui:ForEachRow.Body>
+          </ui:ForEachRow>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="1594.6666666666667,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,96" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[exception.ToString]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:LogMessage>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+  </Sequence>
+</Activity>

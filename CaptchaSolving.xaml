@@ -1,0 +1,1106 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="CaptchaSolving" this:CaptchaSolving.captcha="which is the smallest no. ? 5, 37, 12 =" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:str="clr-namespace:System.Text.RegularExpressions;assembly=System.Text.RegularExpressions" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="captcha" Type="InArgument(x:String)" />
+    <x:Property Name="captchaResult" Type="OutArgument(x:String)" />
+    <x:Property Name="digits" Type="InArgument(x:String)" />
+    <x:Property Name="flag" Type="OutArgument(x:Boolean)" />
+  </x:Members>
+  <sap:VirtualizedContainerService.HintSize>1104.6666666666667,1236.6666666666667</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="39">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Vision.OCR</x:String>
+      <x:String>UiPath.OCR.Contracts</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.OCR.Contracts.Activities</x:String>
+      <x:String>UiPath.Core.Activities.OCR.Engines</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="144">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualStudio.Services.Common</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Windows.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Core</AssemblyReference>
+      <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>UiPath.CV.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap:VirtualizedContainerService.HintSize="1114.6666666666667,1172" sap2010:WorkflowViewState.IdRef="Sequence_39">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Flowchart DisplayName="Flow for captcha" sap:VirtualizedContainerService.HintSize="1052.6666666666667,1061.3333333333333" sap2010:WorkflowViewState.IdRef="Flowchart_2">
+      <Flowchart.Variables>
+        <Variable x:TypeArguments="x:String" Name="captchaDigits" />
+        <Variable x:TypeArguments="x:Int32" Name="sum">
+          <Variable.Default>
+            <Literal x:TypeArguments="x:Int32" />
+          </Variable.Default>
+        </Variable>
+        <Variable x:TypeArguments="x:String" Name="secNo" />
+        <Variable x:TypeArguments="x:Int32" Name="firstNo" />
+        <Variable x:TypeArguments="x:String" Name="question" />
+        <Variable x:TypeArguments="s:String[]" Name="arr" />
+        <Variable x:TypeArguments="x:Int32" Name="min" />
+        <Variable x:TypeArguments="x:Int32" Name="max" />
+        <Variable x:TypeArguments="str:MatchCollection" Name="output" />
+        <Variable x:TypeArguments="x:Int32" Name="counter">
+          <Variable.Default>
+            <Literal x:TypeArguments="x:Int32" Value="8" />
+          </Variable.Default>
+        </Variable>
+        <Variable x:TypeArguments="s:Int32[]" Name="arrInt" />
+        <Variable x:TypeArguments="x:Int32" Name="lastNo" />
+      </Flowchart.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <av:Point x:Key="ShapeLocation">0,0</av:Point>
+          <av:Size x:Key="ShapeSize">60,74.66666666666667</av:Size>
+          <av:PointCollection x:Key="ConnectorLocation">60,37.333333333333336 200,37.333333333333336 200,56.66666666666666</av:PointCollection>
+          <x:Double x:Key="Height">1024.0904736337984</x:Double>
+          <x:Double x:Key="Width">1018.4379169937043</x:Double>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <Flowchart.StartNode>
+        <x:Reference>__ReferenceID15</x:Reference>
+      </Flowchart.StartNode>
+      <FlowDecision x:Name="__ReferenceID0" Condition="[captcha.Contains(&quot;output&quot;) and captcha.Contains(&quot;+&quot;)]" DisplayName="Addition" sap:VirtualizedContainerService.HintSize="70,86.66666666666667" sap2010:WorkflowViewState.IdRef="FlowDecision_12">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <av:Point x:Key="ShapeLocation">235,156.66666666666666</av:Point>
+            <av:Size x:Key="ShapeSize">70,86.66666666666667</av:Size>
+            <av:PointCollection x:Key="TrueConnector">235,200 150,200 150,268.3333333333333</av:PointCollection>
+            <av:PointCollection x:Key="FalseConnector">305,200 332.6666666666667,200 332.6666666666667,116.03999999999999 410,116.03999999999999 410,136.66666666666666</av:PointCollection>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <FlowDecision.True>
+          <FlowStep x:Name="__ReferenceID1">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <av:Point x:Key="ShapeLocation">50,268.3333333333333</av:Point>
+                <av:Size x:Key="ShapeSize">200,84.66666666666667</av:Size>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Sequence DisplayName="Addition" sap:VirtualizedContainerService.HintSize="200,84.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_27">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:TextToLeftRight TextToLeft="{x:Null}" DisplayName="Seperating by ?" FullText="[captcha]" sap:VirtualizedContainerService.HintSize="338,54" sap2010:WorkflowViewState.IdRef="TextToLeftRight_4" Separator="?" SeparatorKey="Custom" TextToRight="[question]">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:TextToLeftRight>
+              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="338,54" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+                <ui:CommentOut.Body>
+                  <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="400,352.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_42">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:TextToLeftRight DisplayName="Seperating by +" FullText="[question]" sap:VirtualizedContainerService.HintSize="338,54" sap2010:WorkflowViewState.IdRef="TextToLeftRight_5" Separator="[&quot;+&quot;.Trim]" SeparatorKey="Custom" TextToLeft="[firstNo]" TextToRight="[secNo]">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:TextToLeftRight>
+                    <ui:TextToLeftRight TextToRight="{x:Null}" CustomSeparatorEnabled="False" DisplayName="Seperating by =" FullText="[secNo]" sap:VirtualizedContainerService.HintSize="338,54" sap2010:WorkflowViewState.IdRef="TextToLeftRight_6" Separator="=" SeparatorKey="EqualsSign" TextToLeft="[secNo]">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:TextToLeftRight>
+                    <ui:TextToLeftRight TextToRight="{x:Null}" CustomSeparatorEnabled="False" DisplayName="Seperating by =" FullText="[secNo]" sap:VirtualizedContainerService.HintSize="338,54" sap2010:WorkflowViewState.IdRef="TextToLeftRight_21" Separator="=" SeparatorKey="EqualsSign" TextToLeft="[secNo]">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:TextToLeftRight>
+                  </Sequence>
+                </ui:CommentOut.Body>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:CommentOut>
+              <ui:TextToLeftRight TextToRight="{x:Null}" CustomSeparatorEnabled="False" DisplayName="Seperating by =" FullText="[question]" sap:VirtualizedContainerService.HintSize="338,54" sap2010:WorkflowViewState.IdRef="TextToLeftRight_22" Separator="=" SeparatorKey="EqualsSign" TextToLeft="[question]">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:TextToLeftRight>
+              <Assign sap:VirtualizedContainerService.HintSize="338,63.333333333333336" sap2010:WorkflowViewState.IdRef="Assign_58">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="s:String[]">[arr]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="s:String[]">[question.Split({"+"},StringSplitOptions.None)]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <Assign sap:VirtualizedContainerService.HintSize="338,63.333333333333336" sap2010:WorkflowViewState.IdRef="Assign_59">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="s:Int32[]">[arrInt]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="s:Int32[]">[Array.ConvertAll(arr, function(str) cint(str.trim))]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="338,54" sap2010:WorkflowViewState.IdRef="CommentOut_5">
+                <ui:CommentOut.Body>
+                  <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="400,174" sap2010:WorkflowViewState.IdRef="Sequence_44">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Assign sap:VirtualizedContainerService.HintSize="338,63.333333333333336" sap2010:WorkflowViewState.IdRef="Assign_43">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[captchaResult]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[(Cint(firstNo)+CInt(secNo)).ToString]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                  </Sequence>
+                </ui:CommentOut.Body>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:CommentOut>
+              <Assign sap:VirtualizedContainerService.HintSize="338,63.333333333333336" sap2010:WorkflowViewState.IdRef="Assign_61">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[captchaResult]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">[arrInt.Sum.ToString]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <Assign sap:VirtualizedContainerService.HintSize="338,63.333333333333336" sap2010:WorkflowViewState.IdRef="Assign_53">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:Boolean">[flag]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                </Assign.Value>
+              </Assign>
+            </Sequence>
+          </FlowStep>
+        </FlowDecision.True>
+        <FlowDecision.False>
+          <FlowDecision x:Name="__ReferenceID2" Condition="[captcha.Contains(&quot;largest&quot;) Or captcha.Contains(&quot;greatest&quot;)]" DisplayName="Largest" sap:VirtualizedContainerService.HintSize="70,86.66666666666667" sap2010:WorkflowViewState.IdRef="FlowDecision_11">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <av:Point x:Key="ShapeLocation">375,136.66666666666666</av:Point>
+                <av:Size x:Key="ShapeSize">70,86.66666666666667</av:Size>
+                <av:PointCollection x:Key="TrueConnector">375,180 360,180 360,268.3333333333333</av:PointCollection>
+                <av:PointCollection x:Key="FalseConnector">445,180 475,180 475,106.66666666666666 540,106.66666666666666 540,136.66666666666666</av:PointCollection>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <FlowDecision.True>
+              <FlowStep x:Name="__ReferenceID3">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <av:Point x:Key="ShapeLocation">260,268.3333333333333</av:Point>
+                    <av:Size x:Key="ShapeSize">200,84.66666666666667</av:Size>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Sequence DisplayName="Largest" sap:VirtualizedContainerService.HintSize="200,84.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_28">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:TextToLeftRight TextToLeft="{x:Null}" DisplayName="Seperating by ?" FullText="[captcha]" sap:VirtualizedContainerService.HintSize="338,54" sap2010:WorkflowViewState.IdRef="TextToLeftRight_13" Separator="?" SeparatorKey="Custom" TextToRight="[question]">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:TextToLeftRight>
+                  <ui:TextToLeftRight TextToRight="{x:Null}" CustomSeparatorEnabled="False" DisplayName="Seperating by =" FullText="[question]" sap:VirtualizedContainerService.HintSize="338,54" sap2010:WorkflowViewState.IdRef="TextToLeftRight_14" Separator="=" SeparatorKey="EqualsSign" TextToLeft="[question]">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:TextToLeftRight>
+                  <Assign sap:VirtualizedContainerService.HintSize="338,63.333333333333336" sap2010:WorkflowViewState.IdRef="Assign_40">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="s:String[]">[arr]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="s:String[]">[question.Split({","},StringSplitOptions.None)]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <Assign sap:VirtualizedContainerService.HintSize="338,63.333333333333336" sap2010:WorkflowViewState.IdRef="Assign_55">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="s:Int32[]">[arrInt]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="s:Int32[]">[Array.ConvertAll(arr, function(str) cint(str.trim))]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <Assign sap:VirtualizedContainerService.HintSize="338,63.333333333333336" sap2010:WorkflowViewState.IdRef="Assign_41">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Int32">[max]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Int32">[arrInt.Max()]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <Assign sap:VirtualizedContainerService.HintSize="338,63.333333333333336" sap2010:WorkflowViewState.IdRef="Assign_42">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[captchaResult]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[max.ToString]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <Assign sap:VirtualizedContainerService.HintSize="338,63.333333333333336" sap2010:WorkflowViewState.IdRef="Assign_74">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Boolean">[flag]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </FlowStep>
+            </FlowDecision.True>
+            <FlowDecision.False>
+              <FlowDecision x:Name="__ReferenceID4" Condition="[captcha.Contains(&quot;smallest&quot;)]" DisplayName="Smallest" sap:VirtualizedContainerService.HintSize="70,86.66666666666667" sap2010:WorkflowViewState.IdRef="FlowDecision_10">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <av:Point x:Key="ShapeLocation">505,136.66666666666666</av:Point>
+                    <av:Size x:Key="ShapeSize">70,86.66666666666667</av:Size>
+                    <av:PointCollection x:Key="TrueConnector">505,180 480,180 480,328.3333333333333 510,328.3333333333333 510,400.66666666666663 480,400.66666666666663</av:PointCollection>
+                    <av:PointCollection x:Key="FalseConnector">575,180 640,180 640,196.66666666666666</av:PointCollection>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <FlowDecision.True>
+                  <FlowStep x:Name="__ReferenceID5">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <av:Point x:Key="ShapeLocation">280,358.3333333333333</av:Point>
+                        <av:Size x:Key="ShapeSize">200,84.66666666666667</av:Size>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Sequence DisplayName="Smallest" sap:VirtualizedContainerService.HintSize="200,84.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_29">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:TextToLeftRight TextToLeft="{x:Null}" DisplayName="Seperating by ?" FullText="[captcha]" sap:VirtualizedContainerService.HintSize="338,54" sap2010:WorkflowViewState.IdRef="TextToLeftRight_10" Separator="?" SeparatorKey="Custom" TextToRight="[question]">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:TextToLeftRight>
+                      <ui:TextToLeftRight TextToRight="{x:Null}" CustomSeparatorEnabled="False" DisplayName="Seperating by =" FullText="[question]" sap:VirtualizedContainerService.HintSize="338,54" sap2010:WorkflowViewState.IdRef="TextToLeftRight_9" Separator="=" SeparatorKey="EqualsSign" TextToLeft="[question]">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:TextToLeftRight>
+                      <Assign sap:VirtualizedContainerService.HintSize="338,63.333333333333336" sap2010:WorkflowViewState.IdRef="Assign_35">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="s:String[]">[arr]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="s:String[]">[question.Split({","},StringSplitOptions.None)]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign sap:VirtualizedContainerService.HintSize="338,63.333333333333336" sap2010:WorkflowViewState.IdRef="Assign_56">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="s:Int32[]">[arrInt]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="s:Int32[]">[Array.ConvertAll(arr, function(str) cint(str.trim))]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign sap:VirtualizedContainerService.HintSize="338,63.333333333333336" sap2010:WorkflowViewState.IdRef="Assign_57">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:Int32">[min]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:Int32">[arrInt.Min()]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign sap:VirtualizedContainerService.HintSize="338,63.333333333333336" sap2010:WorkflowViewState.IdRef="Assign_24">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[captchaResult]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[min.ToString]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign sap:VirtualizedContainerService.HintSize="338,63.333333333333336" sap2010:WorkflowViewState.IdRef="Assign_75">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:Boolean">[flag]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                    </Sequence>
+                  </FlowStep>
+                </FlowDecision.True>
+                <FlowDecision.False>
+                  <FlowDecision x:Name="__ReferenceID6" Condition="[captcha.Contains(&quot;first&quot;)]" DisplayName="First No" sap:VirtualizedContainerService.HintSize="70,86.66666666666667" sap2010:WorkflowViewState.IdRef="FlowDecision_9">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <av:Point x:Key="ShapeLocation">605,196.66666666666666</av:Point>
+                        <av:Size x:Key="ShapeSize">70,86.66666666666667</av:Size>
+                        <av:PointCollection x:Key="TrueConnector">605,240 575,240 575,500.66666666666663 480,500.66666666666663</av:PointCollection>
+                        <av:PointCollection x:Key="FalseConnector">675,240 700,240 700,306.6666666666667</av:PointCollection>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <FlowDecision.True>
+                      <FlowStep x:Name="__ReferenceID7">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <av:Point x:Key="ShapeLocation">280,458.3333333333333</av:Point>
+                            <av:Size x:Key="ShapeSize">200,84.66666666666667</av:Size>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Sequence DisplayName="First Number" sap:VirtualizedContainerService.HintSize="200,84.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_30">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:TextToLeftRight TextToLeft="{x:Null}" DisplayName="Seperating by ?" FullText="[captcha]" sap:VirtualizedContainerService.HintSize="338,54" sap2010:WorkflowViewState.IdRef="TextToLeftRight_15" Separator="?" SeparatorKey="Custom" TextToRight="[question]">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:TextToLeftRight>
+                          <ui:TextToLeftRight TextToRight="{x:Null}" CustomSeparatorEnabled="False" DisplayName="Seperating by =" FullText="[question]" sap:VirtualizedContainerService.HintSize="338,54" sap2010:WorkflowViewState.IdRef="TextToLeftRight_16" Separator="=" SeparatorKey="EqualsSign" TextToLeft="[question]">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:TextToLeftRight>
+                          <Assign sap:VirtualizedContainerService.HintSize="338,63.333333333333336" sap2010:WorkflowViewState.IdRef="Assign_44">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="s:String[]">[arr]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="s:String[]">[question.Split({","},StringSplitOptions.None)]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                          <Assign sap:VirtualizedContainerService.HintSize="338,63.333333333333336" sap2010:WorkflowViewState.IdRef="Assign_63">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="s:Int32[]">[arrInt]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="s:Int32[]">[Array.ConvertAll(arr, function(str) cint(str.trim))]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                          <Assign sap:VirtualizedContainerService.HintSize="338,63.333333333333336" sap2010:WorkflowViewState.IdRef="Assign_64">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:Int32">[firstNo]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:Int32">[arrInt.First()]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                          <Assign sap:VirtualizedContainerService.HintSize="338,63.333333333333336" sap2010:WorkflowViewState.IdRef="Assign_65">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:String">[captchaResult]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:String">[firstNo.ToString]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                          <Assign sap:VirtualizedContainerService.HintSize="338,63.333333333333336" sap2010:WorkflowViewState.IdRef="Assign_76">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:Boolean">[flag]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                        </Sequence>
+                      </FlowStep>
+                    </FlowDecision.True>
+                    <FlowDecision.False>
+                      <FlowDecision x:Name="__ReferenceID8" Condition="[captcha.Contains(&quot;last&quot;)]" DisplayName="Last No" sap:VirtualizedContainerService.HintSize="70,86.66666666666667" sap2010:WorkflowViewState.IdRef="FlowDecision_8">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <av:Point x:Key="ShapeLocation">665,306.6666666666667</av:Point>
+                            <av:Size x:Key="ShapeSize">70,86.66666666666667</av:Size>
+                            <av:PointCollection x:Key="TrueConnector">665,350 600,350 600,518.3333333333334</av:PointCollection>
+                            <av:PointCollection x:Key="FalseConnector">735,350 764.9999999999999,350 764.9999999999999,286.66666666666663 820,286.66666666666663 820,316.66666666666663</av:PointCollection>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <FlowDecision.True>
+                          <FlowStep x:Name="__ReferenceID9">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <av:Point x:Key="ShapeLocation">500,518.3333333333334</av:Point>
+                                <av:Size x:Key="ShapeSize">200,84.66666666666667</av:Size>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <Sequence DisplayName="Last Number" sap:VirtualizedContainerService.HintSize="200,84.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_31">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:TextToLeftRight TextToLeft="{x:Null}" DisplayName="Seperating by ?" FullText="[captcha]" sap:VirtualizedContainerService.HintSize="338,54" sap2010:WorkflowViewState.IdRef="TextToLeftRight_17" Separator="?" SeparatorKey="Custom" TextToRight="[question]">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </ui:TextToLeftRight>
+                              <ui:TextToLeftRight TextToRight="{x:Null}" CustomSeparatorEnabled="False" DisplayName="Seperating by =" FullText="[question]" sap:VirtualizedContainerService.HintSize="338,54" sap2010:WorkflowViewState.IdRef="TextToLeftRight_18" Separator="=" SeparatorKey="EqualsSign" TextToLeft="[question]">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </ui:TextToLeftRight>
+                              <Assign sap:VirtualizedContainerService.HintSize="338,63.333333333333336" sap2010:WorkflowViewState.IdRef="Assign_47">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="s:String[]">[arr]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="s:String[]">[question.Split({","},StringSplitOptions.None)]</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                              <Assign sap:VirtualizedContainerService.HintSize="338,63.333333333333336" sap2010:WorkflowViewState.IdRef="Assign_66">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="s:Int32[]">[arrInt]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="s:Int32[]">[Array.ConvertAll(arr, function(str) cint(str.trim))]</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                              <Assign sap:VirtualizedContainerService.HintSize="338,63.333333333333336" sap2010:WorkflowViewState.IdRef="Assign_67">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:Int32">[lastNo]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:Int32">[arrInt.Last()]</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                              <Assign sap:VirtualizedContainerService.HintSize="338,63.333333333333336" sap2010:WorkflowViewState.IdRef="Assign_68">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:String">[captchaResult]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:String">[lastNo.ToString]</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                              <Assign sap:VirtualizedContainerService.HintSize="338,63.333333333333336" sap2010:WorkflowViewState.IdRef="Assign_77">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:Boolean">[flag]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                            </Sequence>
+                          </FlowStep>
+                        </FlowDecision.True>
+                        <FlowDecision.False>
+                          <FlowDecision x:Name="__ReferenceID13" Condition="[captcha.Contains(&quot;middle&quot;)]" DisplayName="Middle No" sap:VirtualizedContainerService.HintSize="70,86.66666666666667" sap2010:WorkflowViewState.IdRef="FlowDecision_13">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <av:Point x:Key="ShapeLocation">785,316.66666666666663</av:Point>
+                                <av:Size x:Key="ShapeSize">70,86.66666666666667</av:Size>
+                                <av:PointCollection x:Key="TrueConnector">785,359.99999999999994 754.9999999999999,359.99999999999994 754.9999999999999,650 700,650</av:PointCollection>
+                                <av:PointCollection x:Key="FalseConnector">855,359.99999999999994 880,359.99999999999994 880,446.66666666666663</av:PointCollection>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <FlowDecision.True>
+                              <FlowStep x:Name="__ReferenceID14">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <av:Point x:Key="ShapeLocation">500,608.3333333333334</av:Point>
+                                    <av:Size x:Key="ShapeSize">200,84.66666666666667</av:Size>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <Sequence DisplayName="Middle Number" sap:VirtualizedContainerService.HintSize="200,84.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_37">
+                                  <Sequence.Variables>
+                                    <Variable x:TypeArguments="x:String" Name="max" />
+                                    <Variable x:TypeArguments="x:String" Name="min" />
+                                    <Variable x:TypeArguments="x:String" Name="first" />
+                                    <Variable x:TypeArguments="x:String" Name="last" />
+                                    <Variable x:TypeArguments="x:String" Name="middle" />
+                                  </Sequence.Variables>
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:TextToLeftRight TextToLeft="{x:Null}" DisplayName="Seperating by ?" FullText="[captcha]" sap:VirtualizedContainerService.HintSize="338,54" sap2010:WorkflowViewState.IdRef="TextToLeftRight_19" Separator="?" SeparatorKey="Custom" TextToRight="[question]">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </ui:TextToLeftRight>
+                                  <ui:TextToLeftRight TextToRight="{x:Null}" CustomSeparatorEnabled="False" DisplayName="Seperating by =" FullText="[question]" sap:VirtualizedContainerService.HintSize="338,54" sap2010:WorkflowViewState.IdRef="TextToLeftRight_20" Separator="=" SeparatorKey="EqualsSign" TextToLeft="[question]">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </ui:TextToLeftRight>
+                                  <Assign sap:VirtualizedContainerService.HintSize="338,63.333333333333336" sap2010:WorkflowViewState.IdRef="Assign_50">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="s:String[]">[arr]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="s:String[]">[question.Split({","},StringSplitOptions.None)]</InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                  <Assign sap:VirtualizedContainerService.HintSize="338,63.333333333333336" sap2010:WorkflowViewState.IdRef="Assign_69">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="s:Int32[]">[arrInt]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="s:Int32[]">[Array.ConvertAll(arr, function(str) cint(str.trim))]</InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                  <Assign sap:VirtualizedContainerService.HintSize="338,63.333333333333336" sap2010:WorkflowViewState.IdRef="Assign_51">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="x:String">[middle]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="x:String">[arrInt(1).ToString]</InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                  <Assign sap:VirtualizedContainerService.HintSize="338,63.333333333333336" sap2010:WorkflowViewState.IdRef="Assign_52">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="x:String">[captchaResult]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="x:String">[middle.ToString]</InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                  <Assign sap:VirtualizedContainerService.HintSize="338,63.333333333333336" sap2010:WorkflowViewState.IdRef="Assign_78">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="x:Boolean">[flag]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                </Sequence>
+                              </FlowStep>
+                            </FlowDecision.True>
+                            <FlowDecision.False>
+                              <FlowDecision x:Name="__ReferenceID10" Condition="[captcha.Contains(&quot;output&quot;) and captcha.Contains(&quot;-&quot;)]" DisplayName="Subtraction" sap:VirtualizedContainerService.HintSize="70,86.66666666666667" sap2010:WorkflowViewState.IdRef="FlowDecision_7">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <av:Point x:Key="ShapeLocation">845,446.66666666666663</av:Point>
+                                    <av:Size x:Key="ShapeSize">70,86.66666666666667</av:Size>
+                                    <av:PointCollection x:Key="TrueConnector">845,489.99999999999994 815,489.99999999999994 815,740.6666666666667 700,740.6666666666667</av:PointCollection>
+                                    <av:PointCollection x:Key="FalseConnector">915,489.99999999999994 945,489.99999999999994 945,840 731,840</av:PointCollection>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <FlowDecision.True>
+                                  <FlowStep x:Name="__ReferenceID11">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <av:Point x:Key="ShapeLocation">500,698.3333333333334</av:Point>
+                                        <av:Size x:Key="ShapeSize">200,84.66666666666667</av:Size>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <Sequence DisplayName="Subtraction" sap:VirtualizedContainerService.HintSize="200,84.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_32">
+                                      <Sequence.Variables>
+                                        <Variable x:TypeArguments="x:String" Name="first" />
+                                        <Variable x:TypeArguments="x:String" Name="last" />
+                                      </Sequence.Variables>
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <ui:TextToLeftRight TextToLeft="{x:Null}" DisplayName="Seperating by ?" FullText="[captcha]" sap:VirtualizedContainerService.HintSize="338,54" sap2010:WorkflowViewState.IdRef="TextToLeftRight_1" Separator="?" SeparatorKey="Custom" TextToRight="[question]">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                      </ui:TextToLeftRight>
+                                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="338,54" sap2010:WorkflowViewState.IdRef="CommentOut_7">
+                                        <ui:CommentOut.Body>
+                                          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="400,164.66666666666666" sap2010:WorkflowViewState.IdRef="Sequence_47">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <ui:TextToLeftRight DisplayName="Seperating by -" FullText="[question]" sap:VirtualizedContainerService.HintSize="338,54" sap2010:WorkflowViewState.IdRef="TextToLeftRight_2" Separator="[&quot;-&quot;.Trim]" SeparatorKey="Custom" TextToLeft="[firstNo]" TextToRight="[secNo]">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                            </ui:TextToLeftRight>
+                                          </Sequence>
+                                        </ui:CommentOut.Body>
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                      </ui:CommentOut>
+                                      <ui:TextToLeftRight TextToRight="{x:Null}" CustomSeparatorEnabled="False" DisplayName="Seperating by =" FullText="[secNo]" sap:VirtualizedContainerService.HintSize="338,54" sap2010:WorkflowViewState.IdRef="TextToLeftRight_3" Separator="=" SeparatorKey="EqualsSign" TextToLeft="[question]">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                      </ui:TextToLeftRight>
+                                      <Assign sap:VirtualizedContainerService.HintSize="338,63.333333333333336" sap2010:WorkflowViewState.IdRef="Assign_70">
+                                        <Assign.To>
+                                          <OutArgument x:TypeArguments="s:String[]">[arr]</OutArgument>
+                                        </Assign.To>
+                                        <Assign.Value>
+                                          <InArgument x:TypeArguments="s:String[]">[question.Split({","},StringSplitOptions.None)]</InArgument>
+                                        </Assign.Value>
+                                      </Assign>
+                                      <Assign sap:VirtualizedContainerService.HintSize="338,63.333333333333336" sap2010:WorkflowViewState.IdRef="Assign_71">
+                                        <Assign.To>
+                                          <OutArgument x:TypeArguments="s:Int32[]">[arrInt]</OutArgument>
+                                        </Assign.To>
+                                        <Assign.Value>
+                                          <InArgument x:TypeArguments="s:Int32[]">[Array.ConvertAll(arr, function(str) cint(str.trim))]</InArgument>
+                                        </Assign.Value>
+                                      </Assign>
+                                      <Assign sap:VirtualizedContainerService.HintSize="338,63.333333333333336" sap2010:WorkflowViewState.IdRef="Assign_72">
+                                        <Assign.To>
+                                          <OutArgument x:TypeArguments="x:Int32">[min]</OutArgument>
+                                        </Assign.To>
+                                        <Assign.Value>
+                                          <InArgument x:TypeArguments="x:Int32">[arrInt.Min()]</InArgument>
+                                        </Assign.Value>
+                                      </Assign>
+                                      <Assign sap:VirtualizedContainerService.HintSize="338,63.333333333333336" sap2010:WorkflowViewState.IdRef="Assign_73">
+                                        <Assign.To>
+                                          <OutArgument x:TypeArguments="x:Int32">[max]</OutArgument>
+                                        </Assign.To>
+                                        <Assign.Value>
+                                          <InArgument x:TypeArguments="x:Int32">[arrInt.Max()]</InArgument>
+                                        </Assign.Value>
+                                      </Assign>
+                                      <Assign sap:VirtualizedContainerService.HintSize="338,62.666666666666664" sap2010:WorkflowViewState.IdRef="Assign_29">
+                                        <Assign.To>
+                                          <OutArgument x:TypeArguments="x:String">[captchaResult]</OutArgument>
+                                        </Assign.To>
+                                        <Assign.Value>
+                                          <InArgument x:TypeArguments="x:String">[(max-min).ToString]</InArgument>
+                                        </Assign.Value>
+                                      </Assign>
+                                      <Assign sap:VirtualizedContainerService.HintSize="338,62.666666666666664" sap2010:WorkflowViewState.IdRef="Assign_79">
+                                        <Assign.To>
+                                          <OutArgument x:TypeArguments="x:Boolean">[flag]</OutArgument>
+                                        </Assign.To>
+                                        <Assign.Value>
+                                          <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                        </Assign.Value>
+                                      </Assign>
+                                    </Sequence>
+                                  </FlowStep>
+                                </FlowDecision.True>
+                                <FlowDecision.False>
+                                  <FlowStep x:Name="__ReferenceID12">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <av:Point x:Key="ShapeLocation">469,808.3333333333334</av:Point>
+                                        <av:Size x:Key="ShapeSize">262,63.333333333333336</av:Size>
+                                        <av:PointCollection x:Key="ConnectorLocation">469,840 439,840 439,720 300,720</av:PointCollection>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <Assign sap:VirtualizedContainerService.HintSize="262,63.333333333333336" sap2010:WorkflowViewState.IdRef="Assign_31">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:Int32">[counter]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:Int32">[counter-1]</InArgument>
+                                      </Assign.Value>
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                    </Assign>
+                                    <FlowStep.Next>
+                                      <FlowStep x:Name="__ReferenceID16">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <av:Point x:Key="ShapeLocation">100,677.6666666666666</av:Point>
+                                            <av:Size x:Key="ShapeSize">200,84.66666666666667</av:Size>
+                                            <av:PointCollection x:Key="ConnectorLocation">100,720 20,720 20,238.33333333333331 130.66666666666669,238.33333333333331 130.66666666666669,28.333333333333314 180.33333333333331,28.333333333333314 180.33333333333331,56.66666666666666</av:PointCollection>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <Sequence DisplayName="Retry captcha" sap:VirtualizedContainerService.HintSize="200,84.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_50">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Department of Steel and Mines" sap:VirtualizedContainerService.HintSize="496,899.3333333333334" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="c9b8b6b1-37cb-4dbc-b5fb-733a27ee47b8" Version="V2">
+                                            <uix:NApplicationCard.Body>
+                                              <ActivityAction x:TypeArguments="x:Object">
+                                                <ActivityAction.Argument>
+                                                  <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                                                </ActivityAction.Argument>
+                                                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="462,680" sap2010:WorkflowViewState.IdRef="Sequence_51">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="400,54" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Retry captcha&quot;]">
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                  </ui:LogMessage>
+                                                  <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Submit button" sap:VirtualizedContainerService.HintSize="400,54" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="False">
+                                                    <ui:Click.CursorPosition>
+                                                      <ui:CursorPosition Position="Center">
+                                                        <ui:CursorPosition.OffsetX>
+                                                          <InArgument x:TypeArguments="x:Int32" />
+                                                        </ui:CursorPosition.OffsetX>
+                                                        <ui:CursorPosition.OffsetY>
+                                                          <InArgument x:TypeArguments="x:Int32" />
+                                                        </ui:CursorPosition.OffsetY>
+                                                      </ui:CursorPosition>
+                                                    </ui:Click.CursorPosition>
+                                                    <ui:Click.Target>
+                                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3f94f94b-097d-46d0-b04a-4c2b63fba88d" InformativeScreenshot="10f8a926d76e10bb827db1e2aac7b1f9" Selector="&lt;webctrl id='btnSubmit' tag='INPUT' aaname='Submit' name='btnSubmit' type='submit' /&gt;">
+                                                        <ui:Target.TimeoutMS>
+                                                          <InArgument x:TypeArguments="x:Int32" />
+                                                        </ui:Target.TimeoutMS>
+                                                        <ui:Target.WaitForReady>
+                                                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                                                        </ui:Target.WaitForReady>
+                                                      </ui:Target>
+                                                    </ui:Click.Target>
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                  </ui:Click>
+                                                  <uix:NMouseScroll KeyModifiers="{x:Null}" Direction="Down" DisplayName="Mouse Scroll" sap:VirtualizedContainerService.HintSize="400,54" sap2010:WorkflowViewState.IdRef="NMouseScroll_1" InteractionMode="HardwareEvents" MovementUnits="10" ScopeIdentifier="c9b8b6b1-37cb-4dbc-b5fb-733a27ee47b8" Version="V3">
+                                                    <uix:NMouseScroll.SearchedElement>
+                                                      <uix:SearchedElement>
+                                                        <uix:SearchedElement.Target>
+                                                          <uix:TargetAnchorable BrowserURL="https://i3ms.odishaminerals.gov.in/i3ms/pms/TransporterAssignVehicleNew.aspx?ziK6GBCckRQuErQSNNK6ug5ufvRh5RwgYNhQk7CIlFzUN1bMSVf+A5E0sv9b0iXX" DesignTimeRectangle="360, 892, 480, 45" DesignTimeScaleFactor="1.5" ElementType="Icon" FriendlyName="'IMG imgCaptch'" FullSelectorArgument="&lt;webctrl idx='2' tableRow='4' tag='TABLE' /&gt;&lt;webctrl id='imgCaptch' tableRow='2' tag='IMG' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl id='imgCaptch' type='' tag='IMG' class='' aaname='captcha' /&gt;" Guid="6b693124-fb3a-4c61-92c7-629faff10412" ImageBase64="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" InformativeScreenshot="8481c55c31313ccb2f8d7c4015e1bb71.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Department of Steel and Mines' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V1" Visibility="Interactive" />
+                                                        </uix:SearchedElement.Target>
+                                                        <uix:SearchedElement.Timeout>
+                                                          <InArgument x:TypeArguments="x:Double" />
+                                                        </uix:SearchedElement.Timeout>
+                                                      </uix:SearchedElement>
+                                                    </uix:NMouseScroll.SearchedElement>
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                  </uix:NMouseScroll>
+                                                  <Sequence DisplayName="1 Sec Delay" sap:VirtualizedContainerService.HintSize="400,84.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_52">
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                    <Delay DisplayName=" Delay 1 second" Duration="00:00:01" sap:VirtualizedContainerService.HintSize="338,92" sap2010:WorkflowViewState.IdRef="Delay_1" />
+                                                  </Sequence>
+                                                  <ui:GetOCRText WordsInfo="{x:Null}" DisplayName="Get OCR Text 'IMG  imgCaptch'" sap:VirtualizedContainerService.HintSize="400,54" sap2010:WorkflowViewState.IdRef="GetOCRText_1">
+                                                    <ui:GetOCRText.OCREngine>
+                                                      <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd1:Rectangle, x:String))">
+                                                        <ActivityFunc.Argument>
+                                                          <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
+                                                        </ActivityFunc.Argument>
+                                                        <ui:GoogleOCR AllowedCharacters="{x:Null}" DeniedCharacters="{x:Null}" FilterRegion="{x:Null}" Invert="{x:Null}" Language="{x:Null}" Output="{x:Null}" PredictionId="{x:Null}" Profile="{x:Null}" Scale="{x:Null}" Text="{x:Null}" ComputeSkewAngle="False" DisplayName="Tesseract OCR" ExtractWords="False" sap:VirtualizedContainerService.HintSize="200,25.333333333333332" sap2010:WorkflowViewState.IdRef="GoogleOCR_1" Image="[Image]" />
+                                                      </ActivityFunc>
+                                                    </ui:GetOCRText.OCREngine>
+                                                    <ui:GetOCRText.Target>
+                                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6709212d-75eb-442f-8349-40252472a570" InformativeScreenshot="e0fb1918b8d6120121690330e801b8a5" Selector="&lt;webctrl id='imgCaptch' tableRow='2' tag='IMG' aaname='captcha' /&gt;">
+                                                        <ui:Target.TimeoutMS>
+                                                          <InArgument x:TypeArguments="x:Int32" />
+                                                        </ui:Target.TimeoutMS>
+                                                        <ui:Target.WaitForReady>
+                                                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                                                        </ui:Target.WaitForReady>
+                                                      </ui:Target>
+                                                    </ui:GetOCRText.Target>
+                                                    <ui:GetOCRText.Text>
+                                                      <OutArgument x:TypeArguments="x:String">[captcha]</OutArgument>
+                                                    </ui:GetOCRText.Text>
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                  </ui:GetOCRText>
+                                                  <Assign sap:VirtualizedContainerService.HintSize="400,63.333333333333336" sap2010:WorkflowViewState.IdRef="Assign_80">
+                                                    <Assign.To>
+                                                      <OutArgument x:TypeArguments="x:Boolean">[flag]</OutArgument>
+                                                    </Assign.To>
+                                                    <Assign.Value>
+                                                      <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                                                    </Assign.Value>
+                                                  </Assign>
+                                                </Sequence>
+                                              </ActivityAction>
+                                            </uix:NApplicationCard.Body>
+                                            <uix:NApplicationCard.TargetApp>
+                                              <uix:TargetApp Area="0, 0, 0, 0" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAABElSURBVGhDxZkHWFVXtseZ0UmclCdqFAvlgpQLlwsXkC5NFAFRTAxq1CBBLERULNiigkYmEQtdVLqCRjFgAwsqJiKKQTFRyhgT7JqZCGqmaMDzf2vvc87l4nN8mby89/b3/b//Wmufy/mtXa4Fvd9ivNm9m/7E/r0jPrY0Ss5XDy6r87Bruealafth2BD8MMwZ17wd2r5yt20pc7Sq+tjCKHlkX/2xhj1eUUgf//8ZDHqmkcG8Mo1llQwquk7sJ+ei7vs5SaLY11E4PkRZP96gz9T/02YYeJxiYPy3XvatP/g5CRyMYLo4A2eQEqhck3MxdsI9Hwfhvi81REqxMsn/X28kTjGAwOWjIUJowUi85sMAxZW+RzGHZLEEKsaOPBclx8wdscikf7z0ut9usJU5MURVz1ePryCD6epaUGlVZSAZXJv7yHVH3PXWUIPkXA48Z17rqmr5zXZjvMFbU68OtW/rXElHEUgLqgsrSYbydhB0IbV1LwbKYoLm4J26w+cc0Oihbgvo03OshPHrBttOGVYGk1eTwYlOgMwlQA4praToIigDu8MgeWxPjZHL0N4aHouSY3IvDRYYGfy6I7XQuH+87up2wujEDIBcXjUeSyB8Top1a3eG2lMjBMecAJnflmLmtz11YtGpiX7/XhPsq03e5pduu+QioLhiPGZAsrOaDCTVOZhcJ2AG2SkRWtYtJg87YbxBr6kS3ssHuzxN7upWDsi2nV7Kt53lOtKuouT0MjFmYOQy5G1PO3ElmTMo2Z8TB30u5vIUddnVptXw1T/89xe71tWmpcsqMiAWS0C6zmMZUFfaVXw+lwA91IIWkMUS5E13FttRLEo3v+luK1TYW9RLmC8e7MJoV5FJB7wrYCcM1wtWlcHJLgIyENkJiMBv6tQYoJizuU4Xpea6Qc/EGhkkSLhdxytvvaZYP9+3czUJin6IfKEkoM6YzXGXRUC3Az3xKDcLTy5+hfa7d6Ad7Y8hPKrDs+sb0FE/Bh21Q0hOaD/nKHSccxJz5nJMcx3aOR5r9WOlXZv+G930JezOoZjlWOBdMBYXg50lWB04DigBS6uku6r33g3k0L90CH85SI2ESFAOQvs5jdB+VkPAEmgtr1ODrObAY7Em5iun9e+6C6/0eU3huPMdOJGi1wZowdg2d4UWxbaai7a0LWUdnj1+LKGJ426bgEOXniK76gm2kU41/4yr9zqkWWl0PKYdSSIgDYHacxdh5Zx0ltVEUYMkO17/8Zht113o7W0coSkOFRyKx8Kx+G1UhLlKgOI57XIW2VmlmJ3HhzmbJRpxHKx/ilkFf4Nz/EO4JDzi7pwgieLQlJ/omZ+lp8Xx7FaWDIaOs/YUk1P8jIFLMc2LczW21BSL7TB3wlvzJHw9PWWiX72mKFRg8KyR8KRAEVaCvuHGoMlluavRmvKphMBW/Blm5ovgQyTgISyWxOvMpabYs+wz8qCd4FCi1HSc1BIsOYk5j6nWflbF68czFVUcnh0f+x1jBHtqwKFoLDQk5hkzPYUbbiqBVpoDs/i6lN8eGyDIx4aBjE5+3AXYaVWntDWdeSb2GW0TdMk7LgYSpEpor2GAthTbEnBn3FHDXEWy0db0X/+9vt5/OBmEanaE4nl55o5Bg7dauO7KwFkTtmB+3dVG+OnQPvHFNGbk/USgbToSYR271No6c5qT8+n0WXkIj85L0ATIxWBVlFuznBqgnDlrguc2CA/qGaE3cJIq2X77GIgK5c4asNs+Wvh0jpcWusVVhRY3FW6/HSC9EjhAZ56BvFhiEy9W59yBi0+ln0b3+rybFk6UtdapEXIlNcNiJdfGuf1S9AYvda+yKxwDdeFoQbcJdWGIwOq1IzTg8JIebPpEeh0wauMjOKxs6xQBdcn/lXSei9LZhWc3MyRoAjxjJTB1MFEu1XTmlPj8E8N9etYb/FvsCkfjRVIXhAjvJfoLLc7WwvekFhcb/PPCef6yZvpa1BAAEwOR45er9QW1Nu1dEB7WckCCFlVjxaHbqy1YI1SzpNyC4Fluie/2mrbo2RaMEuwKCJik5grhMauzmNUOhDrwBr6nBuTLe7LxZ9gTENcKySVA0XVrunVy9jxJfma/fIye3CZASw7accZCx0W1V5sL1Az3jjPm+Oth0zY9dX4IbPMJlvxfyT8tEN8PUQrfOVkJ4puArJP/hB1ByJJhu9ReEMvwuvXNJ/4h/VS6B9XmDJA0mEPKaq82EzqqB/N5XmMxuZ4qP1iwJciuGgXbPBLFqrxgwYaUMs0N3zkptQ2wl8oQulK/JH9+zv/jW1iSWYeawxVoqT6Iq0eKcfXYTtw4sUm4UbkWj6qn4mEl/dlQbSbqzGDWCNpPm1Jz5BTrWWeMbLPJCxJUDJjEYuaq3GCes7pNbpDgkhWIrz1t6C9pt3kD+y4+gfqjVth+9IA7g+OuGz/n8rN+q28iM+8IrhzcgoZDOWg4mI2mI3loPpaPxqMF+HPldtz8ogQ/1JZh3YLFmB/pjrsH6S6cVtAumBI46bSCmjKFnnmSbwuDZLImUC04uSxWZ1o6zxP/qKvlDdyhi8eARIlwL1bXuahNDThTkovG8lw0leeguTyfnOCPFqLpaDEaK3fi1hd78Nn6BIQFjIbKygsDB6phZabE4Y20AwTeftpYYLq2Z1CLnuFsxzKbnGBaZRHWJieoS2ydEygw8To9V7d3G2+AjYicR1ARlIogRX+5/OcdQgtBXtq7lVY+D1cq8tFwuACNh4vQVFGMhv208lWlSIyJwVt9zGFgoEZfAyu4KK0x0cMNPrY22LnGhDWA9i+NhONpBlV6/SfaJItwIixvRsqZlNkjqQHmgQLTxORQCR8ou/AUNssfwIbguChmoLz2nBTj8uHm6IZLpVvwTelWXDmQQ0dIaoJ05VAuvq/ahYqtqTA28oCpwgMDBmjgb++OtIgpKFkwF+nTwxHl54GK9YbUhBE2xvRM0evpPiiCQXLQ7EAw8WayZYk1UWJee/drqQVgavZjWBOgLAZrvfxHLTirWc75BgNNHNC3nxmK16/Et3RZvzmwHY0Hd6Dp8E40kxqP7sK1fRmImxCOQSahMLcIwUT/qTiyMg21G1NRl7MN57fnoXTZHKx9dzhufm6EMUN7hOp1+2N3fQ63LRBW2wJ4E0oeU1PkumI19oz/rql4/PRvvIHbrc8wPKkNSoJm4MplonfGD2A0dC4MDZXo1ccMYaPH0CUtQv3B7bh8eAcaqZlrVXtxbMs6FE8aidleQTCzmIL3R6/Blxk1uJJbhwtZe/F10R7U7y7BF+lbUbJoAdKi7QSFQTfxH/lGC52rlNtGSqAjYbU1gOAp3yrXxDrPpVpiTRZvgA3WRHj2Iw78vCxo9QcMtKAGrGFsYoP+1EjuumX49iQ1cYh96xTh2y/2ojJ5DQ6MD8J0Z3/YqSKROLMQNdsuo3nnTTQXVqFx9+e4UFSKmtwqlK5aj/k+w9Gvx+tiA/r+xvOsCEyW5ZYRQmce0KXO57aItfS6HVIL4iite4Jh61phSeBWJOaKMekYNMgKRgSuUKjQ11AFVxcv1O3PQ0PlLlw5+hn+fKIU9SV5ODR7BspWZ2JqyEqsjUpDU+EFNBZdQ2VWOcqzi1FbfAAXPzuJIxu2IGv6PLznOiyWN/D7Ht31zZP92iwIjokDSpDMLSWxOea6NbYTj5+Ix0keTXc6UNnwFGmVf4eL/yQYGatgaKKms20LYwtH9DayxcTxYbj6xW40HN+FJjpC5wpTURIzF1f37EPh0m0ojMvFvbIrOJ/7JdZ8mISosGiUJWXiSHo2YsNjsHzyPJR8uOwUb4CN3iFm8TKUZRbBZg0XLLNGUEyimrmUm28ml3ILad6naLLwefNRCb/rsHfxRV8jKwxQ2MLQ3AEmyiEYrHJBP4UGc6fPoG+eEjSdKsW5rYkoff89XMjZgVNpJahNO4kb+y/hWtkJHEjKRnFCGppLjiJlzmK8E/AePgyJxJJRUzr/n4jtgtkG31YZzGIziTmPh3fJGbQ2Z3NS7rtjChKrs3DuziXcenyfN+A6LASunsGwsveAibUTjJROMLN2h1Llg0FmbpgdNR2NJ3ajviAd58PfRc2yTTideRSnUyvRvKcB9099i+bSclzavg/3jpzD5/GfYHvsKkwLnQmnETMg4Yuj1yizeFphDjN4s7+gBecuS8wHZ7J5viPamNXNM0WxGnOfYWEIDpqMEQET4eoRAo2rP0zt3GHu4As7pwCY2fgiZOQ72DI/Gl+vSkTGxHWoXLsfZzbXoK7gLK16Nb7asRc1eXtxuqACJYlpqE7LQXRYDFz9p3dtgA2jpa71MoQsGd4801+S7vzzuW6N3F4NG6UDzK2dYaZyh4PLcDg6ecFmiB+ULiNgo/Ghug8CgqdjY+5DrE+oxrGEYlSuP4a6wi9xsbgcJRvycCBlD5Jj4kkJ2Lc2BSGBUdC4h12SsDtH9949FKbrvdsGZ/hDFgPRdbOMYYLofgKLGSxzUX58TpbSx15wtneBtcoR9vaeBOsGM6UL1HZucPMJwejJSYiN/xJz1pzFvA23sCKxAQdX78SuxQUoWrIVFZuomeQiFCzcjMTJyxE3LgrzJszG0OHRsHcN7bzEuuNNl/4Rpul+ApMIMkwSxenkTJSbkXc+I86xXFsnHznXB6uCR2FNcDAih3rAT6OhO/E2xn2QgcXrLiN+y4+Y++llzFp5Ch/EHcfM+MvIit+Ogtg/ITE8AetnJ+Nwxm58tjYZidMWIXrMFDqW4XD1mgRnjbP4Nfqi0TvILIGBvEimab5aSG09ze+/PMfkuM4fOWFhyJkQhsQR/vhwWjoWJ93Akk33EbX8DMbPLsW4WSWYMLsM788/hGmrLmDRohzkz5+LT6bNwarJc7FwykJ8OHkOIifEwMltARQ2MTCy+ADdu//x5f/drh+kiOdgJAVBm0rOxOB4nEpxGmvKj0s7L+XMlyyZiLLYJUhcW4e4tL9jXtI9zEpoxsSYg5g0dz8mx5ZjMv1NddK8MkxdVo0ZC8tREDcfeUsWIWnWTESOmgBHt3GwdPwTFHZFMNPkoJ9pZIGE+fLxmu1bY40/HdpGoFpI01Q/mKT6ELyPwGK5ZkrPsDoTy9lnWOy6eYywtbAJsak/Y0nyj4hLbsXyzJ8wf/0dhMedJOjTCF9UiSkLyvFudAmiVpzDpoVrkBYVhdQZMRg7Ihb2Q5Ngpt4Bc6cc+ipe8rBb9zd/+W8xu/fqoTBc5drCAVMIPEVyyjkkxSYp3iRxTivtvLewIHs2lqY9wtL0R1ic2kbehoXJf0HUynreQOTKs5iy6CjejytHZHwd0gvqUJqZg2Xhc+A3OgWBk8rgP24PBphNwh9eNfh1v73sGWgSL4MZE5QixYeDGiezWHQ5NkkW55g8M91w/UgvnC+NJPCfEJfyAIsIfsGGe4he04TwpdX44KMaRCyvxuSFFYhYcQbxWU241gocrn6AGYuPYNi7O+m+HIPhYN8ICefXDbYbfd6zymegDFJXRhu9eANGyV58jmJez95N/ww88arQfqIHvt73DlakX8fCDfcRu+42Zq7+BpEf1SJyBYl2IXzpKUxbUU31C6iqb8XFa0BmcTO8xuQ8NDB2/Z/93lh3sEbecO4fMWCRUz0D58CbvLUSa97wyHBj8J06/ip+qDAXtmcn89WP/rgJUau+wvRVdZi28jztxFk6VmcwY/VFFB++i/rvnmHBytSC197o98vP/L87WDPssuuPNUvuG62uGrjCpYU1YbhhqPBZySD8dX/3tqvF3Vv2ru5etiG6W/L7I383Vf/13+m/0XOgwtZ1UmxIxLZT78zceWnaynPURB3GTi+8FBSedco3KDJ2oKHiJeB6ev8J+SuFonecl7IAAAAASUVORK5CYII=" InformativeScreenshot="e309dd095229099a26b325a348909f3c.jpg" Selector="&lt;html app='chrome.exe' title='Department of Steel and Mines' /&gt;" Url="https://i3ms.odishaminerals.gov.in/i3ms/pms/TransporterAssignVehicleNew.aspx?ziK6GBCckRTgqssyDvVCr6ZGHUQL37yJ3ZX5SKlvhmFfKhavLtIt3qLSxN+XYRxm" />
+                                            </uix:NApplicationCard.TargetApp>
+                                          </uix:NApplicationCard>
+                                        </Sequence>
+                                        <FlowStep.Next>
+                                          <FlowDecision x:Name="__ReferenceID15" Condition="[counter&gt;=1 and flag = False]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="78.66666666666667,86.66666666666667" sap2010:WorkflowViewState.IdRef="FlowDecision_14" True="{x:Reference __ReferenceID0}">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                <av:Point x:Key="ShapeLocation">160.66666666666666,56.66666666666666</av:Point>
+                                                <av:Size x:Key="ShapeSize">78.66666666666667,86.66666666666667</av:Size>
+                                                <av:PointCollection x:Key="TrueConnector">160.66666666666666,100 144.66666666666669,100 144.66666666666669,26.04 270,26.04 270,156.66666666666666</av:PointCollection>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                          </FlowDecision>
+                                        </FlowStep.Next>
+                                      </FlowStep>
+                                    </FlowStep.Next>
+                                  </FlowStep>
+                                </FlowDecision.False>
+                              </FlowDecision>
+                            </FlowDecision.False>
+                          </FlowDecision>
+                        </FlowDecision.False>
+                      </FlowDecision>
+                    </FlowDecision.False>
+                  </FlowDecision>
+                </FlowDecision.False>
+              </FlowDecision>
+            </FlowDecision.False>
+          </FlowDecision>
+        </FlowDecision.False>
+      </FlowDecision>
+      <x:Reference>__ReferenceID1</x:Reference>
+      <x:Reference>__ReferenceID2</x:Reference>
+      <x:Reference>__ReferenceID3</x:Reference>
+      <x:Reference>__ReferenceID4</x:Reference>
+      <x:Reference>__ReferenceID5</x:Reference>
+      <x:Reference>__ReferenceID6</x:Reference>
+      <x:Reference>__ReferenceID7</x:Reference>
+      <x:Reference>__ReferenceID8</x:Reference>
+      <x:Reference>__ReferenceID9</x:Reference>
+      <x:Reference>__ReferenceID10</x:Reference>
+      <x:Reference>__ReferenceID11</x:Reference>
+      <x:Reference>__ReferenceID12</x:Reference>
+      <x:Reference>__ReferenceID13</x:Reference>
+      <x:Reference>__ReferenceID14</x:Reference>
+      <x:Reference>__ReferenceID15</x:Reference>
+      <FlowStep>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">100,773</av:Point>
+            <av:Size x:Key="ShapeSize">200,54</av:Size>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ui:CommentOut sap:VirtualizedContainerService.HintSize="200,54" sap2010:WorkflowViewState.IdRef="CommentOut_8">
+          <ui:CommentOut.Body>
+            <Sequence DisplayName="Ignored Activities" sap2010:WorkflowViewState.IdRef="Sequence_48">
+              <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'INPUT  btnsearch'" sap:VirtualizedContainerService.HintSize="200,54" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT">
+                <ui:Click.CursorPosition>
+                  <ui:CursorPosition Position="Center">
+                    <ui:CursorPosition.OffsetX>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:CursorPosition.OffsetX>
+                    <ui:CursorPosition.OffsetY>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:CursorPosition.OffsetY>
+                  </ui:CursorPosition>
+                </ui:Click.CursorPosition>
+                <ui:Click.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="7081df63-5b1a-495d-b7b7-ef6c929b33fd" InformativeScreenshot="7b08f45a1e0a72e28d9816593c47370d" Selector="&lt;html app='chrome.exe' title='Department of Steel and Mines' /&gt;&lt;webctrl idx='2' tableRow='4' tag='TABLE' /&gt;&lt;webctrl id='btnsearch' tableRow='1' tag='INPUT' /&gt;">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ui:Click.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:Click>
+            </Sequence>
+          </ui:CommentOut.Body>
+        </ui:CommentOut>
+      </FlowStep>
+      <x:Reference>__ReferenceID16</x:Reference>
+    </Flowchart>
+  </Sequence>
+</Activity>
